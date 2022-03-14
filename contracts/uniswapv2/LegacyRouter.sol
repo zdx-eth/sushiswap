@@ -727,21 +727,19 @@ contract LegacyRouter is IUniswapV2Router02 {
         );
     }
 
-    function withdraw(address token, uint256 amount) external {
-        bentoBox.withdraw(token, msg.sender, address(this), 0, amount);
+    function withdraw(
+        address token,
+        address to,
+        uint256 amount
+    ) external {
+        bentoBox.withdraw(token, msg.sender, to, 0, amount);
     }
 
     function deposit(
         address token,
         address to,
         uint256 amount
-    ) external returns (uint256 depositedShares) {
-        (, depositedShares) = bentoBox.deposit(
-            token,
-            msg.sender,
-            to,
-            amount,
-            0
-        );
+    ) external {
+        bentoBox.deposit(token, msg.sender, to, amount, 0);
     }
 }
