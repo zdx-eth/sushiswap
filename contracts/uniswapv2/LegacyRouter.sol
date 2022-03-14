@@ -13,7 +13,7 @@ import "./interfaces/IWETH.sol";
 import "./interfaces/IBentoBoxMinimal.sol";
 
 
-contract UniswapV2Router02 is IUniswapV2Router02 {
+contract LegacyRouter is IUniswapV2Router02 {
     using SafeMathUniswap for uint256;
 
     address public immutable override factory;
