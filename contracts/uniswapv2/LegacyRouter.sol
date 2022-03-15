@@ -716,7 +716,7 @@ contract LegacyRouter is IUniswapV2Router02 {
         uint8 v,
         bytes32 r,
         bytes32 s
-    ) external {
+    ) external payable {
         bentoBox.setMasterContractApproval(
             user,
             address(this),
@@ -731,7 +731,7 @@ contract LegacyRouter is IUniswapV2Router02 {
         address token,
         address to,
         uint256 amount
-    ) external {
+    ) external payable {
         bentoBox.withdraw(token, msg.sender, to, 0, amount);
     }
 
@@ -739,7 +739,7 @@ contract LegacyRouter is IUniswapV2Router02 {
         address token,
         address to,
         uint256 amount
-    ) external {
+    ) external payable {
         bentoBox.deposit(token, msg.sender, to, amount, 0);
     }
 }
