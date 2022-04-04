@@ -323,6 +323,13 @@ const config: HardhatUserConfig = {
       live: true,
       saveDeployments: true,
     },
+    ganache: {
+      url: "http://127.0.0.1:7545",
+      accounts,
+      chainId: 1337,
+      live: false,
+      saveDeployments: true,
+    },
   },
   paths: {
     artifacts: "artifacts",
